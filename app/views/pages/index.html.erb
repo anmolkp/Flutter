@@ -1,2 +1,51 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<% if !user_signed_in? %>
+<style>
+body{
+       background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+         url('bg.jpg') no-repeat center center fixed;
+       -webkit-background-size:cover;
+       -moz-background-size:cover;
+       -o-background-size:cover;
+       background-size:cover;
+}
+ h1,h4{
+   color :white;
+ }
+
+ .container-index
+ {
+   margin-left:20%;
+   margin-right:20%;
+ }
+
+ .signup {
+   float:right;
+   width:300px;
+   height:250px;
+ }
+
+ .login {
+   float:right;
+   width:300px;
+   height:150px;
+   margin-top:10%;
+ }
+</style>
+
+<div class="container-index row">
+  <div class="col-sm-6">
+    <h1>Welcome to Flutter.</h1><br />
+    <h4>The Original Social Network.</h4>
+  </div>
+  <div class="col-sm-6">
+    <div class="login panel">
+      Login
+    </div>
+    <div class="signup panel">
+      Signup
+    </div>
+  </div>
+</div>
+<% else %>
+<script>document.location = "/home"</script>
+<% end %>

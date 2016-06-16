@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   #back-end code for pages/home view
   def home
       @posts = Post.all;
+      @newPost= Post.new;
   end
   #back-end code for pages/profile view
   def profile
